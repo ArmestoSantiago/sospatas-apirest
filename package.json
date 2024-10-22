@@ -1,0 +1,31 @@
+{
+  "name": "api-sos-patas",
+  "version": "1.0.0",
+  "description": "API of SOSPatas web",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch ./index.js"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "NODE",
+    "EXPRESS"
+  ],
+  "author": "Santiago Armesto",
+  "license": "ISC",
+  "dependencies": {
+    "@libsql/client": "0.14.0",
+    "dotenv": "16.4.5",
+    "express": "4.21.1",
+    "uuid": "^10.0.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.13.0",
+    "eslint": "9.13.0",
+    "globals": "15.11.0"
+  }
+}
