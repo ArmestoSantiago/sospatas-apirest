@@ -18,10 +18,15 @@ const app = express();
 const server = createServer(app);
 app.use(express.json());
 app.use((req, res, next) => {
+
   const allowedAPIKey = process.env.API_KEY;
-  if (req.header['x-api-key'] !== allowedAPIKey) {
+
+  console.log(allowedAPIKey !== req.headers['x-api-key']);
+  if (req.headers['x-api-key'] !== allowedAPIKey && req.method === 'POST') {
     return res.status(403).json({ message: 'Forbidden' });
   }
+
+  next();
 });
 
 app.get('/animals', async (req, res) => {
