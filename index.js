@@ -2,6 +2,7 @@ import { createServer } from 'node:http';
 import express from 'express';
 import dotenv from 'dotenv';
 import animalsRouter from './routes/animals.js';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -21,6 +22,9 @@ app.use((req, res, next) => {
 
   next();
 });
+app.use(cors({
+  origin: 'http://localhost:5173', // Cambia esto al origen que necesites
+}));
 
 app.use('/animals', animalsRouter);
 
