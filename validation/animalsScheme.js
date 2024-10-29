@@ -22,6 +22,7 @@ const animalsScheme = zod.object({
   location: zod.string({
     required_error: 'location is required'
   })
+
 });
 
 export const validateAnimal = (animal) => {
