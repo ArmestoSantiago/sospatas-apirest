@@ -5,7 +5,7 @@ import animalsRouter from './routes/animals.js';
 
 dotenv.config();
 
-const PORT = process.env.PORT ?? 1234;
+const PORT = process.env.PORT ?? 5173;
 const app = express();
 const server = createServer(app);
 
