@@ -4,6 +4,7 @@ import { validateAnimal } from '../validation/animalsScheme.js';
 export class AnimalsController {
 
   static async getListOfAnimals(req, res) {
+    console.log('asd');
     try {
       const userId = req.userId;
       const animalsList = await AnimalModel.getListOfAnimals({ userId });
@@ -18,6 +19,7 @@ export class AnimalsController {
   };
 
   static async createNewAnimal(req, res) {
+
     const validation = validateAnimal(req.body);
 
     if (!validation.success) res.json(validation.error);

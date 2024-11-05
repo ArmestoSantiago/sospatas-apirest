@@ -17,12 +17,12 @@ export class AnimalModel {
   };
 
   static async createNewAnimal({ data }) {
-    const { userId, type, condition, description, location, imgSrc } = data;
+    const { userId, type, condition, description, lat, lng, imgSrc } = data;
     const id = uuid();
 
     const result = await dbtest.execute({
-      sql: 'INSERT INTO Animals (id, type, location, condition, description, imgSrc, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      args: [id, type, location, condition, description, imgSrc, userId]
+      sql: 'INSERT INTO Animals (id, type, lat, lng, condition, description, imgSrc, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+      args: [id, type, lat, lng, condition, description, imgSrc, userId]
     });
 
     return {

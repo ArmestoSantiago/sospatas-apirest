@@ -19,10 +19,8 @@ const animalsScheme = zod.object({
       required_error: 'imgSrc is required'
     }
   ).url(),
-  location: zod.string({
-    required_error: 'location is required'
-  })
-
+  lat: zod.number(),
+  lng: zod.number()
 });
 
 export const validateAnimal = (animal) => {
