@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import animalsRouter from './routes/animals.js';
 import cors from 'cors';
+import locationRouter from './routes/location.js';
 
 dotenv.config();
 
@@ -23,10 +24,12 @@ app.use((req, res, next) => {
   next();
 });
 app.use(cors({
-  origin: 'http://localhost:5173', // Cambia esto al origen que necesites
+  origin: 'http://localhost:5173',
 }));
 
 app.use('/animals', animalsRouter);
+
+app.use('/predictions', locationRouter);
 
 server.listen(PORT, () => {
   console.log('Estamos dentro', PORT);
