@@ -24,7 +24,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173', 'http://localhost:51204'],
 }));
 
 app.use('/animals', animalsRouter);
