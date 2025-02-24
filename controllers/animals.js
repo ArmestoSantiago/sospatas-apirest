@@ -21,7 +21,7 @@ export class AnimalsController {
 
     const validation = validateAnimal(req.body);
 
-    if (!validation.success) res.json(validation.error);
+    if (!validation.success) res.status(400).json({ message: 'Validation error', error: validation.error.issues });
 
     const data = {
       userId: req.body.user_id,
@@ -38,7 +38,7 @@ export class AnimalsController {
       res.json(result);
 
     } catch (err) {
-      res.json({ code: 422, message: err.message });
+      res.status(429).json({ message: err.message });
     }
 
   }
