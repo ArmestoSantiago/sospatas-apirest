@@ -4,16 +4,19 @@ import dotenv from 'dotenv';
 import animalsRouter from './routes/animals.js';
 import cors from 'cors';
 import locationRouter from './routes/location.js';
+import { userRouter } from './routes/user.js';
 
 dotenv.config();
 
-const PORT = process.env.PORT ?? 5173;
+const PORT = process.env.PORT ?? 1234;
 const app = express();
 const server = createServer(app);
 
 app.use(express.json());
 
 app.use((req, res, next) => {
+
+  console.log('keke');
 
   const allowedAPIKey = process.env.API_KEY;
 
@@ -30,6 +33,8 @@ app.use(cors({
 app.use('/animals', animalsRouter);
 
 app.use('/predictions', locationRouter);
+
+app.use('/users', userRouter);
 
 server.listen(PORT, () => {
   console.log('Estamos dentro', PORT);

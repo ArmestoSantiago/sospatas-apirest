@@ -7,8 +7,6 @@ export class LocationModel {
     const PREDICTION_URL = process.env.PREDICTIONS_ENDPOINT;
     const GOOGLE_KEY = process.env.GOOGLE_KEY;
 
-    console.log(`${PREDICTION_URL}input=${input}&types=geocode&key=${GOOGLE_KEY}`);
-
     try {
       return fetch(`${PREDICTION_URL}input=${input}&types=geocode&key=${GOOGLE_KEY}`)
         .then(res => res.json())

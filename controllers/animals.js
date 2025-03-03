@@ -6,6 +6,7 @@ export class AnimalsController {
   static async getListOfAnimals(req, res) {
     try {
       const userId = req.userId;
+      console.log(userId);
       const animalsList = await AnimalModel.getListOfAnimals({ userId });
 
       res.json(animalsList);
