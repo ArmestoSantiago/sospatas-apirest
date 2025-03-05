@@ -27,7 +27,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:51204'],
+  origin: ['http://localhost:5173', 'http://localhost:51204', 'https://www.sospatas.com'],
 }));
 
 app.use('/animals', animalsRouter);
