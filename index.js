@@ -8,15 +8,13 @@ import { userRouter } from './routes/user.js';
 
 dotenv.config();
 
-const PORT = process.env.PORT ?? 1234;
+const PORT = process.env.PORT ?? 5173;
 const app = express();
 const server = createServer(app);
 
 app.use(express.json());
 
 app.use((req, res, next) => {
-
-  console.log('keke');
 
   const allowedAPIKey = process.env.API_KEY;
 
