@@ -1,6 +1,6 @@
 # SOSPatas API
 
-API REST for SOSPatas web (In Progress): A backend service for managing animal data with CRUD operations and validation.
+API REST for SOSPatas web: A backend service for managing animal data with CRUD operations and validation.
 
 ### Features
 
