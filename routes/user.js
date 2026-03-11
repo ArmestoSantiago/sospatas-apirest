@@ -3,4 +3,6 @@ import { UsersController } from '../controllers/users.js';
 
 export const userRouter = Router();
 
-userRouter.get('/', UsersController.getPostedByUser);
+userRouter.get('/:id/posts', UsersController.getPostedByUser);
+
+userRouter.get('/:id', UsersController.getUserAlreadyExists);
