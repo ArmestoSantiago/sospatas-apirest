@@ -15,8 +15,16 @@ export class UsersModel {
       args: [id]
     });
 
-    console.log(id);
-
     return user.rows;
   };
+
+  static async createUser({ data }) {
+    const { id, photoURL, displayName } = data;
+    const userCreated = await dbconnection.execute({
+      sql: 'INSERT INTO users (id, photoURL, displayName) VALUES (?, ?, ?)',
+      args: [id, photoURL, displayName]
+    });
+
+    return userCreated;
+  }
 }

@@ -6,3 +6,5 @@ export const userRouter = Router();
 userRouter.get('/:id/posts', UsersController.getPostedByUser);
 
 userRouter.get('/:id', UsersController.getUserAlreadyExists);
+
+userRouter.post('/', UsersController.createUser);
