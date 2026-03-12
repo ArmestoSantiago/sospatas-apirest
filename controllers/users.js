@@ -15,6 +15,7 @@ export class UsersController {
   }
   static async getUserAlreadyExists(req, res) {
     try {
+
       const id = req.params.id;
       const user = await UsersModel.getUserAlreadyExists({ id });
       res.json(user);
