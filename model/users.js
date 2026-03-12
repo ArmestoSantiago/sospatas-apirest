@@ -21,7 +21,7 @@ export class UsersModel {
   static async createUser({ data }) {
     const { id, photoURL, displayName } = data;
     const userCreated = await dbconnection.execute({
-      sql: 'INSERT INTO users (id, photoURL, displayName) VALUES (?, ?, ?)',
+      sql: 'INSERT INTO users (id, photoURL, name) VALUES (?, ?, ?)',
       args: [id, photoURL, displayName]
     });
 
