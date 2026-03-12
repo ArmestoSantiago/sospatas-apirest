@@ -13,12 +13,23 @@ export class UsersController {
       console.log(err);
     }
   }
-  static async getUserAlreadyExists(req, res) {
+  static async getUserById(req, res) {
     try {
 
       const id = req.params.id;
-      const user = await UsersModel.getUserAlreadyExists({ id });
+      const user = await UsersModel.getUserById({ id });
       res.json(user);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  static async getAllUsers(req, res) {
+    try {
+
+      const users = await UsersModel.getAllUsers();
+      if (!users) return res.status(400).json({ code: 400, message: 'Unaible to fetch users' });
+      res.status(200).json(users);
     } catch (err) {
       console.log(err);
     }

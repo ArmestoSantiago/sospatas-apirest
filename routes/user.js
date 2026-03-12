@@ -5,6 +5,7 @@ export const userRouter = Router();
 
 userRouter.get('/:id/posts', UsersController.getPostedByUser);
 
-userRouter.get('/:id', UsersController.getUserAlreadyExists);
+userRouter.get('/:id', UsersController.getUserById);
+userRouter.get('/', UsersController.getAllUsers);
 
 userRouter.post('/', UsersController.createUser);

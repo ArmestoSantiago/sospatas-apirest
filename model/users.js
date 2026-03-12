@@ -9,11 +9,17 @@ export class UsersModel {
 
     return postedByUser.rows;
   }
-  static async getUserAlreadyExists({ id }) {
+  static async getUserById({ id }) {
     const user = await dbconnection.execute({
       sql: 'SELECT * FROM users WHERE id = ?',
       args: [id]
     });
+
+    return user.rows;
+  };
+
+  static async getAllUsers() {
+    const user = await dbconnection.execute('SELECT * FROM users');
 
     return user.rows;
   };
