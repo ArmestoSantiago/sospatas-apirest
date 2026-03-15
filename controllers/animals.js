@@ -26,8 +26,11 @@ export class AnimalsController {
 
     const data = {
       userId: req.body.user_id,
+      name: req.body.animal_name,
       ...validation.data
     };
+
+    console.log(data);
 
     try {
       const animalsPostedByUser = await AnimalModel.getListOfAnimals({ userId: data.userId });

@@ -14,7 +14,9 @@ const animalsScheme = zod.object({
   ).url(),
   lat: zod.number({ required_error: 'lat es required', invalid_type_error: 'lat value must be a number' }),
   lng: zod.number({ required_error: 'lng es required', invalid_type_error: 'lng value must be a number' }),
-  address: zod.string({ required_error: 'address es required', invalid_type_error: 'address value must be a string' })
+  address: zod.string({ required_error: 'address es required', invalid_type_error: 'address value must be a string' }),
+  animal_name: zod.string({ required_error: 'name is required', invalid_type_error: 'address value must be a string' }),
+  situation: zod.enum(['ADOPTION', 'RESCUE', 'LOST', 'TRANSITION'], { invalid_type_error: 'situation value must be one of the indicated', required_error: 'situation is required' })
 });
 
 export const validateAnimal = (animal) => {
