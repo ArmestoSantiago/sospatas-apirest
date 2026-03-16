@@ -20,6 +20,7 @@ export class AnimalsController {
 
   static async createNewAnimal(req, res) {
 
+    console.log(req.body);
     const validation = validateAnimal(req.body);
 
     if (!validation.success) res.status(400).json({ code: 400, message: 'Validation error', error: validation.error.issues });
