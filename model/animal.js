@@ -3,8 +3,12 @@ import { v4 as uuid } from 'uuid';
 
 export class AnimalModel {
   static async getListOfAnimals({ userId }) {
+    console.time('getListOfAnimals');
     if (!userId) {
+      console.time('sql');
       const animals = await dbconnection.execute('SELECT * FROM Animals');
+      console.timeEnd('sql');
+      console.timeEnd('getListOfAnimals');
       return animals.rows;
     }
 
