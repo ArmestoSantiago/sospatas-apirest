@@ -37,7 +37,7 @@ export class AnimalsController {
     try {
       const animalsPostedByUser = await AnimalModel.getListOfAnimals({ userId: data.userId });
 
-      if (animalsPostedByUser.rows.length >= 3) {
+      if (animalsPostedByUser.rows.length >= 6) {
         throw new Error('Too many publications');
       }
       const result = await AnimalModel.createNewAnimal({ data });
